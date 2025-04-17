@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Cartelera</h2>
+        <ul>
+            <li th:each="f : ${funciones}">
+                <strong th:text="${f.contenido.titulo}"></strong> - <span th:text="${f.fechaHora}"></span>
+                <form th:action="@{/reservas/realizar}" method="post">
+                    <input type="hidden" name="funcion.id" th:value="${f.id}" />
+                    <label>Cantidad:</label><input type="number" name="cantidad" min="1" /><br/>
+                    <button type="submit">Reservar</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

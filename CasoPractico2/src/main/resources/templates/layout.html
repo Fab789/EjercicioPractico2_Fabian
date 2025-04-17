@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}">Cine/Teatro</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cine Teatro Central</h1>
+    </header>
+    <nav>
+        <a th:href="@{'/'}">Inicio</a>
+        <a th:href="@{'/reservas'}">Cartelera</a>
+        <a th:href="@{'/contacto'}">Contacto</a>
+        <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{'/logout'}">Cerrar Sesión</a>
+        <a th:if="${#authorization.expression('!isAuthenticated()')}" th:href="@{'/login'}">Iniciar Sesión</a>
+    </nav>
+    <main>
+        <div th:insert="~{::body}"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cine Teatro Central</p>
+    </footer>
+</body>
+</html>
+

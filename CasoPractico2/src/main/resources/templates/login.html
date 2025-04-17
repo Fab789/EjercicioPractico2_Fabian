@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Bienvenidos al Cine Teatro Central</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
+
+// contacto.html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Contacto</h2>
+        <form>
+            <label>Nombre:</label><input type="text" name="nombre" /><br/>
+            <label>Correo:</label><input type="email" name="correo" /><br/>
+            <label>Mensaje:</label><textarea name="mensaje"></textarea><br/>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
+
+// login.html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Iniciar Sesión</h2>
+        <form th:action="@{/login}" method="post">
+            <label>Usuario:</label><input type="text" name="username"/><br/>
+            <label>Contraseña:</label><input type="password" name="password"/><br/>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</body>
+</html>
+

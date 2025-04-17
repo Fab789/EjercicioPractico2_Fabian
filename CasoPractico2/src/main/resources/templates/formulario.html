@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Formulario Película/Obra</h2>
+        <form th:action="@{/peliculas/guardar}" th:object="${pelicula}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <label>Título:</label><input type="text" th:field="*{titulo}" /><br/>
+            <label>Descripción:</label><input type="text" th:field="*{descripcion}" /><br/>
+            <label>Tipo:</label><input type="text" th:field="*{tipo}" /><br/>
+            <label>Trailer:</label><input type="text" th:field="*{trailerUrl}" /><br/>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>

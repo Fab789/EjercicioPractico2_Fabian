@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout">
+<body>
+    <div>
+        <h2>Películas/Obras</h2>
+        <a th:href="@{/peliculas/nueva}">Agregar nueva</a>
+        <ul>
+            <li th:each="p : ${peliculas}">
+                <strong th:text="${p.titulo}"></strong> - <span th:text="${p.descripcion}"></span>
+                <a th:href="@{'/peliculas/editar/' + ${p.id}}">Editar</a>
+                <a th:href="@{'/peliculas/eliminar/' + ${p.id}}">Eliminar</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
